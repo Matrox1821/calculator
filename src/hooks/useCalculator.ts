@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {complex, evaluate, isComplex} from "mathjs";
+import {evaluate, isComplex} from "mathjs";
 
 function verificarParentesis(cadena: string) {
   const pila = [];
@@ -111,12 +111,14 @@ export const useCalculator = () => {
     }
   };
   const calcularRes = () => {
-    let a = 1;
     try {
       if (
-        verificarParentesis(calculation) &&
-        !isComplex(evaluate(calculation))
+        (verificarParentesis(calculation) &&
+          isComplex(evaluate(calculation))) ||
+        isComplex(evaluate(agregarParentesis(calculation)))
       ) {
+        setResult("ERROR: Numero complejo");
+      } else if (verificarParentesis(calculation)) {
         setResult(evaluate(calculation));
         setAns(`${evaluate(calculation)}`);
         setNewCalc(true);
@@ -126,10 +128,8 @@ export const useCalculator = () => {
         setNewCalc(true);
       }
     } catch (error) {
+      setResult("Syntax ERROR");
       if (isComplex(evaluate(calculation))) {
-        setResult("ERROR: Numero complejo");
-      } else {
-        setResult("Syntax ERROR");
       }
     }
   };
