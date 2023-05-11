@@ -31,6 +31,11 @@ h2 {
   font-size: 1rem;
   color: #fff;
 }
+a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .calculator {
   padding: 10px;
   background-color: rgb(17, 71, 90);
@@ -179,5 +184,12 @@ h2 {
   .button-container.operator-top:hover {
     background-color: #183044;
     color: #fff;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 }

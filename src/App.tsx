@@ -5,7 +5,12 @@ function App() {
     <div className="App">
       <h1>Calculadora</h1>
       <Calculator />
-      <h2>Hecho por Galarza Matías</h2>
+      <h2>
+        Hecho por&nbsp;
+        <a href="https://portfolio-galarza-matias.netlify.app/">
+          Galarza Matías
+        </a>
+      </h2>
     </div>
   );
 }
