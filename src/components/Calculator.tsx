@@ -40,7 +40,7 @@ export const Calculator = () => {
             onClick={calc.operadores}
             type="operator"
             date="*"
-            label="x"
+            label="×"
           />
           <Button onClick={calc.operadores} type="operator" label="/" />
         </div>
